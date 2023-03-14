@@ -1,0 +1,291 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+  --orange:#ff4200;
+}
+
+body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background-color: black;
+    color: white;
+    letter-spacing:0.1rem;
+    text-align: center;
+}
+
+nav {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.334);
+  text-align: left;
+}
+
+
+
+nav a {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: clamp(1rem, 2.5vw, 1.5rem); 
+    color: white;
+}
+
+nav a:nth-of-type(1){
+    color: var(--orange);
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+.title { 
+    font-family: 'Mynerve', cursive;
+    font-size: max(6vw, 2rem);
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    animation-name:glow;
+    animation-duration:5s;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;
+}
+
+h3{ 
+  font-size: clamp(1.3rem, 2.5vw, 2rem); 
+  line-height: 4rem;
+  margin-bottom: 3rem;
+}
+.hidden{
+    display: none;
+}
+
+.grid-item-1 { 
+    grid-area: zone1;
+}
+.grid-item-2 {
+    grid-area: zone2;
+}
+.grid-item-3 {
+    grid-area: zone3;
+}
+.grid-item-4 {
+    grid-area: zone4;
+}
+
+
+
+.container > div { 
+    border: 2px solid rgba(255, 255, 255, 0.432);
+    border-radius: 15px;
+    padding: 1em;
+    transition: border-color 0.25s ease-in;
+    transition: scale .1s ease-in-out;
+
+
+}
+.container > div:hover{
+    border-color:rgb(254,141,50);
+    border-color: linear-gradient(90deg, rgba(254,141,50,1) 0%, rgba(255,0,0,1) 51%);  
+    transform: scale(1.015); 
+}
+
+.plan-card-title {
+  font-size: 1.3rem;
+  color: var(--orange);
+}
+
+.show-hide-btn {
+  margin: 10px;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.show-hide-btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.show-hide-btn:active {
+  transform: scale(0.95);
+}
+
+.container { 
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-template-rows: auto auto;
+    gap: 30px;
+    grid-template-areas:
+    "zone3 zone3 zone4 zone4" 
+    "zone3 zone3 zone2 zone1" ;
+}
+/* ******************* slideshow ******* */
+
+.slideshow-container {
+    max-width: 80%;
+    position: relative;
+    margin: auto;
+    margin-top: 3rem;
+    border-radius: 15px;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  /* Number text (1/3 etc) */
+.numbertext {
+    color:var(--orange);
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  /* background-color: #bbb; */
+
+  .active, .dot:hover {
+    /* background-color: #717171; */
+    background-color:var(--orange);
+  }
+  .slideshow-container a {
+    color:var(--orange);
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.334);
+    margin-top: 3rem;
+
+}
+
+
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+
+@keyframes glow{
+    from{text-shadow:0px 0px 1px #fff,0px 0px 1px #e0845a;}
+    to{text-shadow:0px 0px 5px #fff,0px 0px 5px #e0845a;}
+  }
+
+@media (max-width:1200px) {
+    .container { 
+        width: 85%;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows: repeat(4 , auto)
+        gap: 15px;
+        grid-template-areas:
+        "zone3 zone3" 
+        "zone3 zone3" 
+        "zone4 zone4" 
+        "zone2 zone1" ;
+
+    }
+}
+
+@media (max-width:700px) {
+    .container { 
+        width: 90%;
+        grid-template-columns:1fr;
+        grid-template-rows: repeat(4 , auto)
+        gap: 15px;
+        grid-template-areas:
+        "zone3" 
+        "zone4" 
+        "zone2" 
+        "zone1" ;
+    }
+}
+
+/* ************* removing hover stuff for mobile ****** */
+
+@media (hover: none) {
+ 
+  nav a:hover{
+      text-decoration: underline;
+  }
+  .container > div:hover{
+    border-color:rgb(254,141,50);
+    border-color: linear-gradient(90deg, rgba(254,141,50,1) 0%, rgba(255,0,0,1) 51%);  
+    transform: scale(1.015); 
+}
+.show-hide-btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.dot:hover {
+  /* background-color: #717171; */
+  background-color:var(--orange);
+}
+
+}

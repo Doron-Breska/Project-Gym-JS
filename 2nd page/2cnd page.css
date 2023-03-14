@@ -1,0 +1,318 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    --orange:#ff4200;
+  }
+
+body {
+    margin: 0;
+    font-family:'Kanit', sans-serif;
+    background-color: black;
+    color: white;
+    letter-spacing:0.13rem;
+    text-align: center;
+
+}
+nav {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.334);
+    text-align: left;
+  }
+
+nav a {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: clamp(1rem, 2.5vw, 1.5rem); 
+    color: white;
+
+}
+
+nav a:nth-of-type(2){
+    color: var(--orange);
+    color: linear-gradient(90deg, rgba(254,141,50,1) 0%, rgba(255,0,0,1) 51%);
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+.title { 
+    font-family: 'Mynerve', cursive;
+    font-size: max(6vw, 2rem);
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    color: rgb(255, 255, 255);
+}
+
+.t-w {
+    animation: color-animation 10s linear infinite;
+
+}
+
+
+.t-w-1 {
+    --color-1: #f75920;
+    --color-2: #ff7b00;
+    --color-3: #ff7f50 ;
+}
+.t-w-2 {
+    --color-1: #DBAD4A;
+    --color-2: #ffa500;
+    --color-3: #e68a00;
+}
+.t-w-3 {
+    --color-1: #ffa500;
+    --color-2: #ff7f50 ;
+    --color-3: #ffa500;
+}
+.t-w-4 {
+    --color-1: #ff7b00;
+    --color-2: #f75920;
+    --color-3: #ff7f50 ;
+}
+
+
+
+h3{ 
+    width: 80%;
+    margin: 0 auto;
+    font-size: clamp(1.3rem, 2.5vw, 2rem); 
+    line-height: 4rem;
+    margin-bottom: 3rem;
+}
+.filters-section { 
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 400;
+    line-height: 1.5em;
+}
+hr {
+    width: 70%;
+}
+.serch-guidness {
+    font-size:1rem ;
+    line-height:0.5rem;
+}
+/* Hide the default checkbox appearance */
+ input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 3px;
+    border: 2px solid #ccc;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    position: relative;
+    top: 3px;
+  } 
+  
+  /* Add custom styles to the checkbox when it's checked */
+  input[type="radio"]:checked::before {
+    content: "\2714"; 
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    background-color: var(--orange); 
+    border-radius: 3px;
+    position: absolute;
+    top: -2px;
+    left: -1px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    text-align: center;
+  }  
+
+  input[type="search"]{
+    font-size: 1.2rem;
+  }
+  input[type="search"]:focus {
+      outline-color: var(--orange);
+  }
+
+select:focus {
+    outline-color:var(--orange);
+  }
+select option:focus {
+    background-color: var(--orange) !important;
+  } 
+
+#search-btn {
+    margin: 10px;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    border: 0px;
+    font-weight: 700;
+    box-shadow: 0px 0px 14px -7px #f09819;
+    background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+#search-btn:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;  
+}
+
+
+#data { 
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap:30px;
+}
+
+
+.card-css {
+    border: 2px solid rgba(255, 255, 255, 0.432);
+    border-radius: 15px;
+    transition: border-color 0.25s ease-in;
+    transition: scale .1s ease-in-out;
+    height: 600px;
+    overflow: scroll;
+}
+
+/* .hidden{
+    display: none;
+} */
+
+.card-css:hover {
+    border-color:rgb(254,141,50);
+    border-color: linear-gradient(90deg, rgba(254,141,50,1) 0%, rgba(255,0,0,1) 51%);
+    transform: scale(1.01); 
+  }
+.card-css:hover h2 {
+    color:var(--orange);
+}
+  
+h2 {
+    font-size: clamp(1.25rem, 3.5vw, 2rem); 
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+
+.card-css h4 , p {
+    font-size: clamp(1.25rem, 1.75vw, 1.75rem);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+h4 {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    
+}
+
+p {
+border-top:2px solid rgba(255, 255, 255, 0.231);;
+font-weight: 200;
+line-height: 1.2em;
+padding-right: 0.5em;
+padding-left: 0.5em;
+}
+
+.nothing-found {
+    display: none;
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid;
+    border-color:rgb(254,141,50);
+    border-color: linear-gradient(90deg, rgba(254,141,50,1) 0%, rgba(255,0,0,1) 51%);
+    padding-left:.25rem ;
+    padding-right:.25rem ;
+    border-radius: 15px;
+}
+
+
+.ball {
+    position: absolute;
+    border-radius: 100%;
+    opacity: 0.7;
+  }
+footer {
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.334);
+}
+
+
+
+/* ******************************** key frames and media-q  */
+
+@keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+  
+
+@media (max-width:1200px) {
+       #data { 
+        width: 85%;   
+        grid-template-columns: 1fr 1fr ;
+    }
+    h3{ 
+        width: 85%;
+    }
+    hr {
+        width: 80%;
+    }
+    .filters-section { 
+        width: 85%;
+    }
+}
+
+
+@media (max-width:700px) {
+    #data { 
+        width: 90%;
+     grid-template-columns: 1fr ;
+ }
+ hr {
+    width: 90%;
+}
+.filters-section { 
+    width: 90%;
+}
+
+}
+/* ************* removing hover stuff for mobile ****** */
+
+@media (hover: none) {
+ 
+    nav a:hover{
+        text-decoration: underline;
+    }
+    #search-btn:hover {
+        background-position: right center;
+        color: #fff;
+        text-decoration: none;  
+    }
+    .card-css:hover {
+        border-color:rgb(254,141,50);
+        border-color: linear-gradient(90deg, rgba(254,141,50,1) 0%, rgba(255,0,0,1) 51%);
+        transform: scale(1.01); 
+      }
+    .card-css:hover h2 {
+        color:var(--orange);
+    }
+  }
+
