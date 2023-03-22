@@ -282,7 +282,7 @@ noResDiv.style.display = 'none';
   let radio = document.getElementById("radio");
       const radios = document.querySelectorAll('input[type="radio"]');
           for (let i = 0; i < radios.length; i++) {
-            radios[i].innerHTML = '';
+            // radios[i].innerHTML = '';
             radios[i].parentNode.removeChild(radios[i]);
           };
   const difficulties = new Set();
@@ -290,7 +290,7 @@ noResDiv.style.display = 'none';
     difficulties.add(singleResult.difficulty);
   }
   const arrayOfDifficulties = Array.from(difficulties);
-  for (let i = 0; i < arrayOfDifficulties.length; i += 1) {
+  for (let i = 0; i < arrayOfDifficulties.length; i++) {
     const dOptionInput = document.createElement("input");
     dOptionInput.type = "radio";
     dOptionInput.id = arrayOfDifficulties[i];
