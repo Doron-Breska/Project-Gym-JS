@@ -219,6 +219,19 @@ noResDiv.style.display = 'none';
 }   
 }
 
+// here just for deployment - 
+
+const myHeaders = new Headers();
+myHeaders.append("X-Api-Key", "ZnrvaVI6dT6LcVxTFT8zeA==OpleFoWjfSvTVhrJ");
+
+const options = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+//
+
 
     function fetchDataDefult() {
       const spaceForCards = document.getElementById("data");
