@@ -317,8 +317,17 @@ const options = {
   defaultRadioInput.addEventListener("change", function () {
     filterResults(results);
   });
-   //
    
+   
+        const allOptionLabel = document.createElement("label");
+  allOptionLabel.for = "all";
+  allOptionLabel.innerText = "All";
+  allOptionLabel.classList.add("labels");
+    radio.appendChild(allOptionLabel);
+   
+   
+   //
+
   const arrayOfDifficulties = Array.from(difficulties);
   for (let i = 0; i < arrayOfDifficulties.length; i++) {
     const dOptionInput = document.createElement("input");
@@ -330,13 +339,7 @@ const options = {
     dOptionInput.addEventListener("change", function () {
       filterResults(results);
     });
-///
-     const allOptionLabel = document.createElement("label");
-  allOptionLabel.for = "all";
-  allOptionLabel.innerText = "All";
-  allOptionLabel.classList.add("labels");
-    radio.appendChild(allOptionLabel);
-    ///
+
 
     const dOptionLabel = document.createElement("label");
     dOptionLabel.for = arrayOfDifficulties[i];
