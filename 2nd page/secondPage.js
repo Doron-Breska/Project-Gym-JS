@@ -300,31 +300,8 @@ const options = {
    };
    const labelss = document.getElementsByClassName("labels")
              for (let i = 0; i < labelss.length; i++) {
-            labelss[i].innerHTML = ''; };
-          
-    //test
-     const defaultRadioInput = document.createElement("input");
-  defaultRadioInput.type = "radio";
-  defaultRadioInput.id = "All";
-  defaultRadioInput.name = "difficulty";
-  defaultRadioInput.value = '';
-  // defaultRadioInput.checked = true; // Pre-select the "All" radio button
-  radio.appendChild(defaultRadioInput);
-  defaultRadioInput.addEventListener("change", function () {
-    filterResults(results);
-  });
-   
-  const allOptionLabel = document.createElement("label");
-  allOptionLabel.for = "all";
-  allOptionLabel.innerText = "All";
-  allOptionLabel.classList.add("labels");
-    radio.appendChild(allOptionLabel);
-   
-   //
-   
-   
-   
-   
+     labelss[i].innerHTML = '';
+   };
   const difficulties = new Set();
   for (let singleResult of results) {
     difficulties.add(singleResult.difficulty);
