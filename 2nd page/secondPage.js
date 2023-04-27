@@ -291,41 +291,41 @@ const options = {
 
   
 
- function createRadioButtons(results) {
-  let radio = document.getElementById("radio");
-      const radios = document.querySelectorAll('input[type="radio"]');
-          for (let i = 0; i < radios.length; i++) {
-            radios[i].innerHTML = '';
-            radios[i].parentNode.removeChild(radios[i]);
-   };
-   const labelss = document.getElementsByClassName("labels")
-             for (let i = 0; i < labelss.length; i++) {
-            labelss[i].innerHTML = '';
-   };
+//  function createRadioButtons(results) {
+//   let radio = document.getElementById("radio");
+//       const radios = document.querySelectorAll('input[type="radio"]');
+//           for (let i = 0; i < radios.length; i++) {
+//             radios[i].innerHTML = '';
+//             radios[i].parentNode.removeChild(radios[i]);
+//    };
+//    const labelss = document.getElementsByClassName("labels")
+//              for (let i = 0; i < labelss.length; i++) {
+//             labelss[i].innerHTML = '';
+//    };
           
-  const difficulties = new Set();
-  for (let singleResult of results) {
-    difficulties.add(singleResult.difficulty);
-  }
-  const arrayOfDifficulties = Array.from(difficulties);
-  for (let i = 0; i < arrayOfDifficulties.length; i++) {
-    const dOptionInput = document.createElement("input");
-    dOptionInput.type = "radio";
-    dOptionInput.id = arrayOfDifficulties[i];
-    dOptionInput.name = "difficulty";
-    dOptionInput.value = arrayOfDifficulties[i];
-    radio.appendChild(dOptionInput);
-    dOptionInput.addEventListener("change", function () {
-      filterResults(results);
-    });
+//   const difficulties = new Set();
+//   for (let singleResult of results) {
+//     difficulties.add(singleResult.difficulty);
+//   }
+//   const arrayOfDifficulties = Array.from(difficulties);
+//   for (let i = 0; i < arrayOfDifficulties.length; i++) {
+//     const dOptionInput = document.createElement("input");
+//     dOptionInput.type = "radio";
+//     dOptionInput.id = arrayOfDifficulties[i];
+//     dOptionInput.name = "difficulty";
+//     dOptionInput.value = arrayOfDifficulties[i];
+//     radio.appendChild(dOptionInput);
+//     dOptionInput.addEventListener("change", function () {
+//       filterResults(results);
+//     });
 
-    const dOptionLabel = document.createElement("label");
-    dOptionLabel.for = arrayOfDifficulties[i];
-    dOptionLabel.innerText = arrayOfDifficulties[i];
-    dOptionLabel.classList.add("labels")
-    radio.appendChild(dOptionLabel);
-  }
-}
+//     const dOptionLabel = document.createElement("label");
+//     dOptionLabel.for = arrayOfDifficulties[i];
+//     dOptionLabel.innerText = arrayOfDifficulties[i];
+//     dOptionLabel.classList.add("labels")
+//     radio.appendChild(dOptionLabel);
+//   }
+// }
 
 
   function createSelectOptions(results) {
@@ -349,6 +349,66 @@ const options = {
     }
     
   }
+  
+//// test
+function createRadioButtons(results) {
+  let radio = document.getElementById("radio");
+
+  // Remove existing radio buttons and labels
+  const radios = document.querySelectorAll('input[type="radio"]');
+  for (let i = 0; i < radios.length; i++) {
+    radios[i].innerHTML = '';
+    radios[i].parentNode.removeChild(radios[i]);
+  }
+  const labelss = document.getElementsByClassName("labels");
+  for (let i = 0; i < labelss.length; i++) {
+    labelss[i].innerHTML = '';
+  }
+
+  // Create "All" radio button
+  const allOptionInput = document.createElement("input");
+  allOptionInput.type = "radio";
+  allOptionInput.id = "all";
+  allOptionInput.name = "difficulty";
+  allOptionInput.value = "";
+  allOptionInput.checked = true; // Pre-select the "All" radio button
+  radio.appendChild(allOptionInput);
+  allOptionInput.addEventListener("change", function () {
+    filterResults(results);
+  });
+
+  // Create "All" label
+  const allOptionLabel = document.createElement("label");
+  allOptionLabel.for = "all";
+  allOptionLabel.innerText = "All";
+  allOptionLabel.classList.add("labels");
+  radio.appendChild(allOptionLabel);
+
+  // Create radio buttons for other difficulties
+  const difficulties = new Set();
+  for (let singleResult of results) {
+    difficulties.add(singleResult.difficulty);
+  }
+  const arrayOfDifficulties = Array.from(difficulties);
+  for (let i = 0; i < arrayOfDifficulties.length; i++) {
+    const dOptionInput = document.createElement("input");
+    dOptionInput.type = "radio";
+    dOptionInput.id = arrayOfDifficulties[i];
+    dOptionInput.name = "difficulty";
+    dOptionInput.value = arrayOfDifficulties[i];
+    radio.appendChild(dOptionInput);
+    dOptionInput.addEventListener("change", function () {
+      filterResults(results);
+    });
+
+    const dOptionLabel = document.createElement("label");
+    dOptionLabel.for = arrayOfDifficulties[i];
+    dOptionLabel.innerText = arrayOfDifficulties[i];
+    dOptionLabel.classList.add("labels");
+    radio.appendChild(dOptionLabel);
+  }
+}
+//////
 
 
   
