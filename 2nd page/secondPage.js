@@ -307,8 +307,8 @@ const options = {
   defaultRadioInput.type = "radio";
   defaultRadioInput.id = "All";
   defaultRadioInput.name = "difficulty";
-  defaultRadioInput.value = "";
-  defaultRadioInput.checked = true; // Pre-select the "All" radio button
+  defaultRadioInput.value = " ";
+  // defaultRadioInput.checked = true; // Pre-select the "All" radio button
   radio.appendChild(defaultRadioInput);
   defaultRadioInput.addEventListener("change", function () {
     filterResults(results);
