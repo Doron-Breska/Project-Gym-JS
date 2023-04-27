@@ -302,14 +302,10 @@ const options = {
              for (let i = 0; i < labelss.length; i++) {
             labelss[i].innerHTML = ''; };
           
-  const difficulties = new Set();
-  for (let singleResult of results) {
-    difficulties.add(singleResult.difficulty);
-  }
-   //test
+    //test
      const defaultRadioInput = document.createElement("input");
   defaultRadioInput.type = "radio";
-  defaultRadioInput.id = "all";
+  defaultRadioInput.id = "All";
   defaultRadioInput.name = "difficulty";
   defaultRadioInput.value = "";
   defaultRadioInput.checked = true; // Pre-select the "All" radio button
@@ -318,16 +314,21 @@ const options = {
     filterResults(results);
   });
    
-   
-        const allOptionLabel = document.createElement("label");
+  const allOptionLabel = document.createElement("label");
   allOptionLabel.for = "all";
   allOptionLabel.innerText = "All";
   allOptionLabel.classList.add("labels");
     radio.appendChild(allOptionLabel);
    
-   
    //
-
+   
+   
+   
+   
+  const difficulties = new Set();
+  for (let singleResult of results) {
+    difficulties.add(singleResult.difficulty);
+  }
   const arrayOfDifficulties = Array.from(difficulties);
   for (let i = 0; i < arrayOfDifficulties.length; i++) {
     const dOptionInput = document.createElement("input");
